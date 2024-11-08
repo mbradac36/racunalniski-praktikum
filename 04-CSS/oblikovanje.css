@@ -1,74 +1,70 @@
-/* * *  * * *  * * *  * * *  * * *
-Ta naloga je sestavljena iz dveh delov: HTML in CSS.
-Prvi del je v datoteki dokument.html.
-Pri točkovanju bomo upoštevali, ali (in do kakšne mere) je 
-izvorna koda dokumenta veljaven in urejen CSS.
-
-1. Sklop deklaracij za značko body dopolnite tako,
-   da bo velikost pisave nastavljena na 1.2 em
-2. Dodajte izbiralec za značke "img".
-   Dodajte deklaraciji za višino, tako da bo slika zasedla
-   celotno širino elementov, višina pa naj bo določena tako, 
-   da bo ohranjeno prvotno razmerje med višino in širino.
-3. Izbiralec za značko blockquote dopolnite tako, da bodo 
-   citati imeli ozadje barve rgb(51, 81, 126, 0.2),
-   rob pa naj bo širok 1px in enake barve, kot besedilo
-   glavnega naslova.
-
- * * *  * * *  * * *  * * *  * * */
-
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    line-height: 1.5;
-    max-width: 40em;
-    margin: auto;
-    text-align: justify;
+    /*  Barva pisave pod značko oz. oznako  */
+    color: #333333; 
+    /*  Določanje pisave: brskalnik uporabi prvo v seznamu pisav, ki jo ima uporabnik nameščeno.
+       Če ni nameščena nobena od naštetih pisav, se uporabi privzeta pisava brskalnika. */
+    font-family: Garamond, "Hoefler Text", "Times New Roman", Times, serif;
+    /*  Velikost pisave lahko določimo na več načinov.
+        Spodnji jo določi glede na velikost pisave v znački, ki je na enem nivoju višje;
+        če velikost pisave na zgornjem nivoju ni določena, se določi glede na privzeto velikost pisave v brskalniku. */
     font-size: 1.2em;
+    /*  Višina vrstice  */
+    line-height: 1.5;
+    /*  Največja širina vsebine spletne strani  */
+    max-width: 40em;
+    /*  Širina zunanjega roba; auto pomeni, da rob izračuna brskalnik tako, da element zavzame širino določeno v slogu,
+        preostanek pa se enakomerno razdeli med levim in desnim robom  */
+    margin: auto;
+    /*  Obojestranska poravnava besedila    */
+    text-align: justify;
 }
 
-img {
+/*  Odstranimo podčrtovanje povezav in outline (ta se včasih pokaže kot kvadratek okrog povezave)  */
+a { text-decoration: none; outline:none; }
+/*  Spremenimo barve povezav: neobiskanih, obiskanih, pod miško in aktivnih */
+a:link { color:#cc0000; }
+a:visited { color:#660066; }
+a:hover { color:#660066; }
+a:active { color:#990000; outline:none; }
+
+code {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    color: #009966;
+}
+h1{
+    color:#742815
+}
+h2{
+    margin-top: 2em;
+    border-top-color: #aaaaaa;
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding-top: 0.5em;
+    
+}
+#uvod{
+    padding: 2em;
+    background-color: rgb(51, 0, 102, 0.1);
+}
+a::before {
+    content: '🔗';
+}
+.slika{
+    font-size: 0.9em;
+    width: 40%;
+    text-align: left;
+    float: right;
+    margin-left: 2em;
+    
+
+
+}
+.slika img{
     width: 100%;
     height: auto;
+    border-radius: 50%;
 }
-
-.hec {
-    margin: 0 auto;
-    text-align: center;
-    width: 70%;
-    background-color: rgb(239, 32, 66);
-    color: white;
-    padding: 0.5em;
-    font-size: 1.7em;
-}
-
-blockquote {
+.slika p:last-child{
     font-size: 0.8em;
-    width: 50%;
-    float: right;
-    margin-right: 2em;
-    padding: 1em;
-    background-color: rgb(51, 81, 126, 0.2);
-    border-width: 1px;
-    border-color: rgb(51, 81, 126);
-
-}
-blockquote p {
-    font-style: italic;
 }
 
-
-
-h1 {
-    color:#330066(51, 81, 126);
-}
-
-h2 {
-    margin-top: 3em;
-    color: rgb(225, 127, 74);
-}
-
-dl dt {
-    font-weight: bold;
-    float: left;
-    margin-right: 1em;
-}
